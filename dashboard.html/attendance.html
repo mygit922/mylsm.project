@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attendance | LSM School</title>
+  <!-- Reuse your dashboard theme -->
+  <link rel="stylesheet" href="dashboard.css">
+  <!-- Extra attendance styling -->
+  <link rel="stylesheet" href="attendance.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="profile">
+        <img src="images/profile.png" alt="Profile" class="profile-pic" />
+        <h3>Alex Johnson</h3>
+        <p>Class: 10-A</p>
+        <p>ID: STU-2023-0042</p>
+      </div>
+      <nav class="menu">
+        <a href="dashboard.html">🏠 Dashboard</a>
+        <a href="attendance.html" class="active">📋 Attendance</a>
+        <a href="subjects.html">📚 My Subjects</a>
+        <a href="timetable.html">🗓️ Time Table</a>
+        <a href="syllabus.html">📑 Syllabus</a>
+        <a href="quizzes.html">📝 Quizzes</a>
+        <a href="fee-record.html">💳 Fee Record</a>
+        <a href="results.html">📊 Results</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+      <header class="topbar">
+        <h1>Attendance</h1>
+        <div class="user-info">
+          <span>🔔</span>
+          <span>Alex Johnson (Student)</span>
+        </div>
+      </header>
+
+      <!-- Attendance Table -->
+      <section class="attendance-section">
+        <div class="info-bar">
+          <label>Class: <input type="text" placeholder="Enter Class"></label>
+          <label>Date: <input type="date"></label>
+        </div>
+
+        <table class="attendance-table">
+          <thead>
+            <tr>
+              <th class="no">No</th>
+              <th>Student Name</th>
+              <th class="m">M</th>
+              <th class="t">T</th>
+              <th class="w">W</th>
+              <th class="th">T</th>
+              <th class="f">F</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td>2</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td>3</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td>4</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

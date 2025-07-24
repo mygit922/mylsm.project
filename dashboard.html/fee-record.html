@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fee Record | LSM School</title>
+  <link rel="stylesheet" href="dashboard.css" />
+  <style>
+    /* Optional: Style for the print button */
+    .print-btn {
+      background-color: #007BFF; /* same blue theme */
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+      display: inline-block;
+    }
+    .print-btn:hover {
+      background-color: #0056b3;
+    }
+    .print-section {
+      text-align: center;
+      margin: 30px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="profile">
+        <img src="images/profile.png" alt="Profile" class="profile-pic" />
+        <h3>Student Name</h3>
+        <p>Class: 4</p>
+        <p>Roll No: 20</p>
+      </div>
+      <nav class="menu">
+        <a href="dashboard.html">🏠 Dashboard</a>
+        <a href="attendance.html">📋 Attendance</a>
+        <a href="#">📚 My Subjects</a>
+        <a href="timetable.html">🗓️ Time Table</a>
+        <a href="#">📑 Syllabus</a>
+        <a href="Quiz.html">📝 Quizzes</a>
+        <a class="active" href="fee-record.html">💳 Fee Record</a>
+        <a href="#">📌 Notice Board</a>
+        <a href="results.html">📊 Results</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+      <header class="topbar">
+        <h1>Fee Record</h1>
+        <div class="user-info">
+          <span>🔔</span>
+          <span>Student (Class 4)</span>
+        </div>
+      </header>
+
+      <section class="cards">
+        <div class="card">
+          <h4>Total Fee Due</h4>
+          <p class="big">₨2000</p>
+          <span>Pending payment</span>
+        </div>
+        <div class="card">
+          <h4>Deadline</h4>
+          <p class="big">1st March 2025</p>
+          <span>Pay before this date</span>
+        </div>
+        <div class="card">
+          <h4>Roll Number</h4>
+          <p class="big">20</p>
+          <span>Your student ID</span>
+        </div>
+        <div class="card">
+          <h4>Class</h4>
+          <p class="big">4</p>
+          <span>Section A</span>
+        </div>
+      </section>
+
+      <section class="bottom-sections">
+        <div class="schedule">
+          <h2>Payment Instructions</h2>
+          <p>Please pay your remaining fee of <strong>₨2000</strong> before <strong>1st March 2025</strong> at the school office or via the online portal.</p>
+          <p>Late payments may include additional charges. For any queries, contact the school accounts department.</p>
+        </div>
+
+        <div class="notice">
+          <h2>Important Notes</h2>
+          <div class="notice-item urgent">
+            <h4>⚠️ Late Fee Policy</h4>
+            <p>A fine of ₨50 per day will be charged after the due date.</p>
+          </div>
+          <div class="notice-item">
+            <h4>💳 Online Payment Available</h4>
+            <p>You can pay via net banking or UPI through our portal.</p>
+          </div>
+          <div class="notice-item">
+            <h4>📞 Contact</h4>
+            <p>Accounts Office: +92 300 1234567</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Print Button -->
+      <div class="print-section">
+        <button class="print-btn" onclick="window.print()">🖨️ Print Fee Record</button>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
+
+

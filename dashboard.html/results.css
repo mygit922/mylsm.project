@@ -1,0 +1,52 @@
+/* Tabs for classes */
+.class-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .class-tabs button {
+    padding: 10px 20px;
+    border: 1px solid #0d3b66;
+    background: #ffffff;
+    color: #0d3b66;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .class-tabs button.active {
+    background: #0d3b66;
+    color: #ffffff;
+  }
+  
+  .class-tabs button:hover {
+    background: #14508e;
+    color: #ffffff;
+  }
+  
+  /* Results table */
+  .results-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+  
+  .results-table th,
+  .results-table td {
+    border: 1px solid #ddd;
+    text-align: center;
+    padding: 12px;
+  }
+  
+  .results-table th {
+    background: #0d3b66; /* blue header */
+    color: #ffffff;
+  }
+  
+  .results-table tr:nth-child(even) {
+    background: #f4f6f8;
+  }
+  
+  

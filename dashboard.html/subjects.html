@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Subjects | LSM School</title>
+  <link rel="stylesheet" href="dashboard.css" />
+  <style>
+    .main-content {
+      padding: 20px;
+    }
+    h1 {
+      color: #004aad;
+      margin-bottom: 20px;
+    }
+    .search-box {
+      margin: 20px 0;
+      text-align: center;
+    }
+    .search-box input {
+      padding: 8px;
+      width: 220px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    .search-box button {
+      padding: 8px 12px;
+      margin-left: 8px;
+      border: none;
+      background: #004aad;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .subject-card {
+      background: #f1f6ff;
+      border: 1px solid #cce;
+      border-radius: 8px;
+      padding: 20px;
+      max-width: 700px;
+      margin: 20px auto;
+    }
+    .subject-card h2 {
+      color: #004aad;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      padding: 10px;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+    th {
+      background: #004aad;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="profile">
+        <img src="images/profile.png" alt="Profile" class="profile-pic" />
+        <h3>Subjects</h3>
+        <p>LSM School</p>
+      </div>
+      <nav class="menu">
+        <a href="dashboard.html">🏠 Dashboard</a>
+        <a href="admin-portal.html">🧑‍💻 Admin Portal</a>
+        <a href="attendance.html">📋 Attendance</a>
+        <a href="fee-record.html">💳 Fee Record</a>
+        <a href="results.html">📊 Results</a>
+        <a href="test-syllabus.html">📑 Test Syllabus</a>
+        <a href="subjects.html">📚 My Subjects</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+      <header class="topbar">
+        <h1>📚 Subjects</h1>
+        <div class="user-info">
+          <span>Search Subjects by Class</span>
+        </div>
+      </header>
+
+      <section class="main-content">
+        <div class="search-box">
+          <input type="text" id="classInput" placeholder="Enter Class e.g. 8">
+          <button onclick="searchSubjects()">Search</button>
+        </div>
+
+        <div id="subjectsResult" style="display:none;">
+          <div class="subject-card">
+            <h2 id="classHeading"></h2>
+            <p id="classTeacher"></p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Subject</th>
+                  <th>Teacher</th>
+                </tr>
+              </thead>
+              <tbody id="subjectsBody">
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    // Subjects data for multiple classes if needed
+    const subjectsData = [
+      {
+        class: "8",
+        classTeacher: "ABC",
+        subjects: [
+          { name: "Physics", teacher: "XYZ" },
+          { name: "Biology", teacher: "XYZ" },
+          { name: "Chemistry", teacher: "XYZ" },
+          { name: "Mathematics", teacher: "XYZ" },
+          { name: "Urdu", teacher: "XYZ" },
+          { name: "English", teacher: "XYZ" },
+          { name: "Islamic Studies", teacher: "XYZ" },
+          { name: "Pakistan Studies", teacher: "XYZ" }
+        ]
+      }
+      // you can add more class objects here if needed
+    ];
+
+    function searchSubjects() {
+      const classVal = document.getElementById('classInput').value.trim();
+      const resultDiv = document.getElementById('subjectsResult');
+      const heading = document.getElementById('classHeading');
+      const classTeacherP = document.getElementById('classTeacher');
+      const tbody = document.getElementById('subjectsBody');
+
+      // Clear old data
+      tbody.innerHTML = '';
+      heading.innerText = '';
+      classTeacherP.innerText = '';
+
+      const classInfo = subjectsData.find(item => item.class === classVal);
+
+      if (classInfo) {
+        heading.innerText = `Subjects for Class ${classInfo.class}`;
+        classTeacherP.innerText = `Class Teacher: ${classInfo.classTeacher}`;
+        classInfo.subjects.forEach(subj => {
+          const row = document.createElement('tr');
+          row.innerHTML = `<td>${subj.name}</td><td>${subj.teacher}</td>`;
+          tbody.appendChild(row);
+        });
+        resultDiv.style.display = 'block';
+      } else {
+        heading.innerText = `No subjects found for Class ${classVal}`;
+        resultDiv.style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>

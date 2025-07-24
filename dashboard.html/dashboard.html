@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard | LSM School</title>
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="profile">
+        <!-- Eagle logo -->
+        <img src="images/eagle-logo.png" alt="School Logo" class="profile-pic" 
+             style="width:100px; height:auto; display:block; margin:0 auto; filter:brightness(0) invert(1);" />
+        <!-- School name -->
+        <h3 style="color:#fff; font-size:18px; text-align:center; margin-top:10px;">
+          Jinnah School for Excellence
+        </h3>
+      </div>
+      <nav class="menu">
+        <a href="dashboard.html">🏠 Dashboard</a>
+        <a href="attendance.html">📋 Attendance</a>
+        <a href="subjects.html">📚 My Subjects</a>
+        <a href="timetable.html">🗓️ Time Table</a>
+        <a href="test-syllabus.html">📑 Test Syllabus</a>
+        <a href="Quiz.html">📝 Quizzes</a>
+        <a href="fee-record.html">💳 Fee Record</a>
+        <a href="results.html">📊 Results</a>
+        <a href="admin-portal.html">🧑‍💻 Admin Portal</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+      <header class="topbar">
+        <h1>Dashboard</h1>
+        <div class="user-info">
+          <span>🔔</span>
+          <span>Welcome to Jinnah School for Excellence</span>
+        </div>
+      </header>
+
+      <!-- Stats Cards -->
+      <section class="cards">
+        <div class="card">
+          <h4>Attendance</h4>
+          <p class="big">92%</p>
+          <span>This academic year</span>
+        </div>
+        <div class="card">
+          <h4>Percentage</h4>
+          <p class="big">87%</p>
+          <span>Current year</span>
+        </div>
+        <div class="card">
+          <h4>Upcoming</h4>
+          <p class="big">2</p>
+          <span>Assignments due</span>
+        </div>
+        <div class="card">
+          <h4>Quizzes</h4>
+          <p class="big">1</p>
+          <span>This week</span>
+        </div>
+      </section>
+
+      <!-- Schedule and Notice Board -->
+      <section class="bottom-sections">
+        <div class="schedule">
+          <h2>Upcoming Schedule <span class="day">Today, Monday</span></h2>
+          <div class="class">
+            <div class="time">8:30 AM<br>10:00 AM</div>
+            <div>
+              <h3>Mathematics</h3>
+              <p>Advanced Calculus - Room 302</p>
+            </div>
+          </div>
+          <div class="class">
+            <div class="time">10:15 AM<br>11:45 AM</div>
+            <div>
+              <h3>Physics</h3>
+              <p>Mechanics - Lab 201</p>
+            </div>
+          </div>
+          <div class="class">
+            <div class="time">1:00 PM<br>2:30 PM</div>
+            <div>
+              <h3>Computer Science</h3>
+              <p>Programming - Lab 105</p>
+            </div>
+          </div>
+          <div class="class">
+            <div class="time">2:45 PM<br>4:15 PM</div>
+            <div>
+              <h3>English Literature</h3>
+              <p>Modern Poetry - Room 405</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="notice">
+          <h2>Notice Board</h2>
+          <div class="notice-item urgent">
+            <h4>Urgent: Exam Schedule Change <span>Today</span></h4>
+            <p>Final exams for Mathematics have been rescheduled to next Monday.</p>
+          </div>
+          <div class="notice-item">
+            <h4>Science Fair Registration <span>Yesterday</span></h4>
+            <p>Registration for the Annual Science Fair is now open. Submit by Friday.</p>
+          </div>
+          <div class="notice-item">
+            <h4>Sports Day Announcement <span>2 days ago</span></h4>
+            <p>Annual Sports Day will be held on the 15th of next month.</p>
+          </div>
+          <a class="view-all" href="#">View All Notices</a>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

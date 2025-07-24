@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Portal | LSM School</title>
+  <link rel="stylesheet" href="dashboard.css" />
+  <style>
+    .search-box {
+      margin: 20px;
+      text-align: center;
+    }
+    .search-box input {
+      padding: 8px;
+      width: 220px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    .search-box button {
+      padding: 8px 12px;
+      margin-left: 8px;
+      border: none;
+      background: #004aad;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .student-data {
+      margin: 20px auto;
+      max-width: 800px;
+      background: #f8faff;
+      border: 1px solid #cce;
+      border-radius: 8px;
+      padding: 20px;
+    }
+    .student-data h2 {
+      color: #004aad;
+      margin-bottom: 10px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    th, td {
+      padding: 10px;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+    th {
+      background: #004aad;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="profile">
+        <img src="images/profile.png" alt="Profile" class="profile-pic" />
+        <h3>Admin Portal</h3>
+        <p>LSM School</p>
+      </div>
+      <nav class="menu">
+        <a href="dashboard.html">🏠 Dashboard</a>
+        <a href="admin-portal.html">🧑‍💻 Admin Portal</a>
+        <a href="attendance.html">📋 Attendance</a>
+        <a href="fee-record.html">💳 Fee Record</a>
+        <a href="results.html">📊 Results</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+      <header class="topbar">
+        <h1>Admin Portal</h1>
+        <div class="user-info">
+          <span>🔍 Search Student Data</span>
+        </div>
+      </header>
+
+      <!-- Search Section -->
+      <section class="search-box">
+        <input type="text" id="rollInput" placeholder="Enter Roll Number...">
+        <button onclick="searchStudent()">Search</button>
+      </section>
+
+      <!-- Student Data Display -->
+      <section class="student-data" id="studentData" style="display:none;">
+        <h2 id="studentName"></h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Class</th>
+              <th>Attendance</th>
+              <th>Fee Status</th>
+              <th>Marks</th>
+              <th>Grade</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="studentClass"></td>
+              <td id="attendance"></td>
+              <td id="fee"></td>
+              <td id="marks"></td>
+              <td id="grade"></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    // Demo student data including Class 6
+    const students = [
+      { name: "Ahmed Khan", roll: "12", class: "4", attendance: "80%", fee: "Fee Fully Paid", marks: 750, outOf: 800, grade: "A" },
+      { name: "Sara Ali", roll: "20", class: "10", attendance: "90%", fee: "2000 PKR Due", marks: 680, outOf: 800, grade: "B" },
+      { name: "Zainab Hussain", roll: "30", class: "6", attendance: "95%", fee: "Fee Fully Paid", marks: 720, outOf: 800, grade: "A+" },
+      { name: "Hassan Raza", roll: "40", class: "6", attendance: "88%", fee: "1000 PKR Due", marks: 690, outOf: 800, grade: "B+" }
+    ];
+
+    function searchStudent() {
+      const roll = document.getElementById("rollInput").value.trim();
+      const student = students.find(s => s.roll === roll);
+      const dataDiv = document.getElementById("studentData");
+
+      if(student){
+        document.getElementById("studentName").innerText = student.name + " (Roll No: " + student.roll + ")";
+        document.getElementById("studentClass").innerText = student.class;
+        document.getElementById("attendance").innerText = student.attendance;
+        document.getElementById("fee").innerText = student.fee;
+        document.getElementById("marks").innerText = student.marks + " / " + student.outOf;
+        document.getElementById("grade").innerText = student.grade;
+        dataDiv.style.display = "block";
+      } else {
+        dataDiv.style.display = "block";
+        document.getElementById("studentName").innerText = "No student found with Roll No: " + roll;
+        document.getElementById("studentClass").innerText = "";
+        document.getElementById("attendance").innerText = "";
+        document.getElementById("fee").innerText = "";
+        document.getElementById("marks").innerText = "";
+        document.getElementById("grade").innerText = "";
+      }
+    }
+  </script>
+</body>
+</html>

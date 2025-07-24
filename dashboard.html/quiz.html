@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>School Subjects - Online Quiz</title>
+  <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+  <div class="quiz-container">
+    <h1>School Subjects - Online Quiz</h1>
+    <p>Choose the correct school subject and click the question tag (?) next to it. 
+      If your answer is correct a smile 🙂 is shown. 
+      If it's wrong a cross (X) appears and you have to try again.</p>
+
+    <div class="question-header">
+      <span>1 / 15</span>
+      <button class="next-btn">=&gt;</button>
+    </div>
+
+    <div class="question">
+      <p>We learned about the Romans in the _________ lesson.</p>
+      <div class="option">
+        <button class="check" data-answer="false">?</button> German
+      </div>
+      <div class="option">
+        <button class="check" data-answer="true">?</button> history
+      </div>
+      <div class="option">
+        <button class="check" data-answer="false">?</button> biology
+      </div>
+      <div class="option">
+        <button class="check" data-answer="false">?</button> art
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Simple script to show feedback
+    document.querySelectorAll('.check').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (btn.dataset.answer === "true") {
+          btn.textContent = "✅";
+        } else {
+          btn.textContent = "❌";
+        }
+      });
+    });
+  </script>
+</body>
+</html>

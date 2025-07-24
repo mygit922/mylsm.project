@@ -1,0 +1,54 @@
+/* Extra styles for Fee Record page */
+
+/* Table styling */
+.fee-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+  }
+  
+  .fee-table th,
+  .fee-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+  }
+  
+  .fee-table th {
+    background: #0d3b66; /* same blue as dashboard */
+    color: #fff;
+  }
+  
+  .fee-table tr:nth-child(even) {
+    background: #f4f6f8;
+  }
+  
+  .pay-btn {
+    background: #0d3b66;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .pay-btn:hover {
+    background: #14508e;
+  }
+  
+  /* Cards color reuse dashboard.css or add custom */
+  .card.red { background: #f44336; }
+  .card.orange { background: #ff9800; }
+  .card.yellow { background: #ffb300; }
+  .card.green { background: #4caf50; }
+  
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+  }
+  
+  

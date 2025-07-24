@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Results | LSM School</title>
+  <link rel="stylesheet" href="dashboard.css"> <!-- reuse dashboard styles -->
+  <link rel="stylesheet" href="results.css">   <!-- extra results styles -->
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="profile">
+        <img src="images/profile.png" alt="Profile" class="profile-pic" />
+        <h3>Alex Johnson</h3>
+        <p>Class: 10-A</p>
+        <p>ID: STU-2023-0042</p>
+      </div>
+      <nav class="menu">
+        <a href="dashboard.html">🏠 Dashboard</a>
+        <a href="attendance.html">📋 Attendance</a>
+        <a href="subjects.html">📚 My Subjects</a>
+        <a href="timetable.html">🗓️ Time Table</a>
+        <a href="syllabus.html">📑 Syllabus</a>
+        <a href="quizzes.html">📝 Quizzes</a>
+        <a href="fee-record.html">💳 Fee Record</a>
+        <a href="results.html" class="active">📊 Results</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+      <header class="topbar">
+        <h1>Results</h1>
+        <div class="user-info">
+          <span>🔔</span>
+          <span>Alex Johnson (Student)</span>
+        </div>
+      </header>
+
+      <section class="results-section">
+        <div class="class-tabs">
+          <button>CLASS 1</button>
+          <button class="active">CLASS 2</button>
+          <button>CLASS 3</button>
+        </div>
+
+        <table class="results-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Roll No</th>
+              <th>Marks</th>
+              <th>Grade</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Fatima Ahmed</td>
+              <td>101</td>
+              <td>92</td>
+              <td>A</td>
+            </tr>
+            <tr>
+              <td>Ali Hassan</td>
+              <td>102</td>
+              <td>85</td>
+              <td>B</td>
+            </tr>
+            <tr>
+              <td>Saima Khan</td>
+              <td>103</td>
+              <td>78</td>
+              <td>C</td>
+            </tr>
+            <tr>
+              <td>Bilal Raza</td>
+              <td>104</td>
+              <td>88</td>
+              <td>B</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
+

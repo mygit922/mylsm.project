@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Test Syllabus | LSM School</title>
+  <link rel="stylesheet" href="dashboard.css" />
+  <style>
+    .main-content {
+      padding: 20px;
+    }
+    h1 {
+      color: #004aad;
+      margin-bottom: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      padding: 10px;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+    th {
+      background: #004aad;
+      color: #fff;
+    }
+    .search-box {
+      margin-top: 20px;
+      text-align: center;
+    }
+    .search-box input {
+      padding: 8px;
+      width: 220px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    .search-box button {
+      padding: 8px 12px;
+      margin-left: 8px;
+      border: none;
+      background: #004aad;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="profile">
+        <img src="images/profile.png" alt="Profile" class="profile-pic" />
+        <h3>Test Syllabus</h3>
+        <p>LSM School</p>
+      </div>
+      <nav class="menu">
+        <a href="dashboard.html">🏠 Dashboard</a>
+        <a href="admin-portal.html">🧑‍💻 Admin Portal</a>
+        <a href="attendance.html">📋 Attendance</a>
+        <a href="fee-record.html">💳 Fee Record</a>
+        <a href="results.html">📊 Results</a>
+        <a href="test-syllabus.html">📑 Test Syllabus</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+      <header class="topbar">
+        <h1>📑 Test Syllabus</h1>
+        <div class="user-info">
+          <span>Search Upcoming Tests</span>
+        </div>
+      </header>
+
+      <section class="main-content">
+        <div class="search-box">
+          <input type="text" id="classInput" placeholder="Enter Class e.g. 4">
+          <button onclick="searchTests()">Search</button>
+        </div>
+
+        <div id="testResults" style="display:none;">
+          <h2 id="classHeading"></h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Class</th>
+                <th>Test Date</th>
+                <th>Day</th>
+                <th>Subject</th>
+                <th>Teacher</th>
+                <th>Type</th>
+              </tr>
+            </thead>
+            <tbody id="resultsBody">
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    // Test data
+    const tests = [
+      { class: "4", date: "6 October 2025", day: "Monday", subject: "Biology", teacher: "Mr Ahsan", type: "Monthly Test" },
+      { class: "4", date: "20 October 2025", day: "Monday", subject: "Mathematics", teacher: "Mr Kamran", type: "Monthly Test" }
+    ];
+
+    function searchTests() {
+      const classVal = document.getElementById('classInput').value.trim();
+      const resultsDiv = document.getElementById('testResults');
+      const resultsBody = document.getElementById('resultsBody');
+      const heading = document.getElementById('classHeading');
+
+      // Clear old rows
+      resultsBody.innerHTML = '';
+
+      const filtered = tests.filter(t => t.class === classVal);
+      if (filtered.length > 0) {
+        heading.innerText = "Upcoming Tests for Class " + classVal;
+        filtered.forEach(t => {
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td>${t.class}</td>
+            <td>${t.date}</td>
+            <td>${t.day}</td>
+            <td>${t.subject}</td>
+            <td>${t.teacher}</td>
+            <td>${t.type}</td>
+          `;
+          resultsBody.appendChild(row);
+        });
+        resultsDiv.style.display = 'block';
+      } else {
+        heading.innerText = "No tests found for Class " + classVal;
+        resultsDiv.style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>
