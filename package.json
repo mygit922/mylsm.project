@@ -1,0 +1,17 @@
+{
+  "name": "lsm-school-lms",
+  "version": "1.0.0",
+  "description": "LSM School Learning Management System",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx http-server . -p 3000",
+    "build": "echo 'Build complete - static files ready'",
+    "start": "npx http-server . -p 3000"
+  },
+  "keywords": ["school", "lms", "education", "dashboard"],
+  "author": "LSM School",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
